@@ -7,13 +7,11 @@ Este é um simples jogo da velha desenvolvido em Kotlin, onde os jogadores têm 
 
 ### Funcionalidades
 •Jogo Offline:
-
 <br>Opção para jogar passando o dispositivo para o próximo jogador.
 Permite que dois jogadores joguem no mesmo dispositivo.
 Interface simples e intuitiva para alternar entre os jogadores.
 
 •Jogo Online:
-
 <br>Jogue contra outros jogadores em tempo real.
 Utiliza o Firebase Realtime Database para sincronizar o estado do jogo entre os dispositivos dos jogadores.
 Opção para criar ou participar de partidas.
