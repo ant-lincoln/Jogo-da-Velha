@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".GameActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/ic_back"
+            android:drawableTint="@color/second"
+            android:onClick="onBackButtonClick"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button_clear_cont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@android:color/transparent"
+            android:drawableRight="@android:drawable/ic_menu_delete"
+            android:drawableTint="@color/second"
+            android:onClick="onBackButtonClick"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/first"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="Inicie o jogo" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Primeiro CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_x"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/first"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_cont_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/second"
+
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ganhador X"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Segundo CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_o"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:background="@color/first"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_cont_0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/second"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ganhador O"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Terceiro CardView -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_empate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/first"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_cont_empate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/second"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Empate"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp">
+
+        <!-- GridLayout -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:columnCount="3"
+            android:padding="12dp"
+            android:rowCount="3">
+
+            <!-- Grid items -->
+            <Button
+                android:id="@+id/btn_0"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="0"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="1"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="2"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_3"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="3"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="4"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_5"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="5"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_6"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="6"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_7"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="7"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+
+            <Button
+                android:id="@+id/btn_8"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_simple"
+                android:tag="8"
+                android:textColor="@color/first"
+                android:textSize="32dp"
+                tools:text="X" />
+        </GridLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Outro texto -->
+    <TextView
+        android:id="@+id/tv_identification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:textSize="18sp" />
+
+    <!-- Botão -->
+    <Button
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/first"
+        android:text="Iniciar jogo"
+        android:textColor="@color/second" />
+
+
+</LinearLayout>
